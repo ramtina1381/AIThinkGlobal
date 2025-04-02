@@ -24,14 +24,14 @@ app.post('/send-email', async (req, res) => {
     let transporter = nodemailer.createTransport({
         service: 'gmail',  // You can use another email service (e.g., Outlook, Yahoo)
         auth: {
-            user: process.env.EMAIL_USER,  // Your email from .env file
+            user: process.env.SENDGRID_TO_EMAIL,  // Your email from .env file
             pass: process.env.EMAIL_PASS   // Your app password from .env file
         }
     });
 
     let mailOptions = {
-      from: `"Website Form" <${process.env.EMAIL_USER}>`,  // Your email
-      to: process.env.EMAIL_USER,                         // Your email
+      from: `"Website Form" <${process.env.SENDGRID_TO_EMAIL}>`,  // Your email
+      to: process.env.SENDGRID_TO_EMAIL,                         // Your email
       replyTo: `${name} <${email}>`,                      // Replies go to the user
       subject: `[Contact Form] ${subject} (From: ${email})`,
       text: `Message from ${name} (${email}):\n\n${message}`

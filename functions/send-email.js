@@ -14,7 +14,7 @@ exports.handler = async function(event, context) {
   }
 
   const msg = {
-    to: process.env.EMAIL_USER,  // Replace with your recipient's email
+    to: process.env.SENDGRID_TO_EMAIL,  // Replace with your recipient's email
     from: data.email,            // Use the email provided in the form
     subject: data.subject,
     text: data.message,
