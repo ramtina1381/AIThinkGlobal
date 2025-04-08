@@ -91,17 +91,18 @@
 //         res.status(405).json({ error: "Method Not Allowed" });
 //     }
 // };
-const express = require('express');
-const path = require('path');
+import express from 'express';
+import path from 'path';
 const app = express();
+import { handler } from './api/send-email.js';
 
 app.use(express.json());
 
 // Serve static frontend
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('./public'));
 
 // API route
-app.post('/api/send-email', require('./api/send-email'));
+app.post('/api/send-email', handler);
 
 // Handle SPA routing (optional)
 app.get('*', (req, res) => {
