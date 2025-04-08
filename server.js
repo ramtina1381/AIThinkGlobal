@@ -96,10 +96,16 @@ import path from 'path';
 const app = express();
 import { handler } from './api/send-email.js';
 
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
 app.use(express.json());
 
 // Serve static frontend
-app.use(express.static('./public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // API route
 app.post('/api/send-email', handler);
