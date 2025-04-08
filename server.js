@@ -98,7 +98,7 @@ const app = express();
 app.use(express.json());
 
 // Serve static frontend
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('./public'));
 
 // API route
 app.post('/api/send-email', require('./api/send-email'));
