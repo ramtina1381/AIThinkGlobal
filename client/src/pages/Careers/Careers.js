@@ -90,7 +90,6 @@ const filteredJobs = jobData.filter(job => {
             <option value="Digital Marketing">Digital Marketing</option>
           </select>
           <input type="text" placeholder="Location" />
-          <input type="text" placeholder="Distance" />
           <button className="btn-primary">Find Jobs</button>
         </div>
 
