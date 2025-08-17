@@ -178,15 +178,16 @@ return (
             ) : (
               <li><Link to="/auth?mode=login" className={location.pathname === '/auth' ? 'active' : ''}>Login</Link></li>
             )}
-                  </ul>
-          <i
-            ref={mobileNavToggleBtnRef}
-            className={`mobile-nav-toggle ${mobileNavOpen ? 'open' : ''}`}
-            onClick={toggleMobileNav}
-          >
-            ☰
-          </i>
+          </ul>
         </nav>
+        
+        <i
+          ref={mobileNavToggleBtnRef}
+          className={`mobile-nav-toggle ${mobileNavOpen ? 'open' : ''}`}
+          onClick={toggleMobileNav}
+        >
+          ☰
+        </i>
       </div>
     </header>
   );
