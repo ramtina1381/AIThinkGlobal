@@ -1,0 +1,288 @@
+/* Container & Section Setup */
+.contact.section {
+  background-color: #f9fafb;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  max-width: 1200px;
+  margin: 20px auto;
+  justify-content: center;
+}
+
+/* Title & Subtitle */
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e3a8a; /* deep blue */
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  font-size: 1.125rem;
+  color: #555;
+}
+
+/* Layout */
+.contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+/* Left Column (Info + Map) */
+.contact-col-left {
+  flex: 1 1 350px;
+  max-width: 450px;
+}
+
+.info-wrap {
+  background: white;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+  margin-bottom: 30px;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 25px;
+  color: #1e3a5f;
+}
+
+.info-item i {
+  font-size: 1.8rem;
+  color: #1e3a5f; /* brighter blue */
+  min-width: 30px;
+}
+
+/* Info text */
+.info-item h4 {
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-size: 1.125rem;
+}
+
+.info-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Map */
+.map-iframe {
+  width: 100%;
+  height: 250px;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+}
+
+/* Right Column (Form) */
+.contact-col-right {
+  flex: 1 1 400px;
+  max-width: 500px;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+/* Form Groups Layout */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+}
+
+.form-group.half {
+  flex: 1 1 48%;
+}
+
+.form-group.full {
+  flex: 1 1 100%;
+}
+
+/* Labels */
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #1e3a5f;
+}
+
+/* Inputs & Textarea */
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 12px 15px;
+  border: 1.5px solid #cbd5e1; /* light gray-blue */
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s ease;
+  resize: vertical;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: #1e3a5f;
+  outline: none;
+}
+
+
+
+/* Status Messages */
+.loading,
+.error-message,
+.sent-message {
+  display: none;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.loading {
+  color: #1e3a5f;
+}
+
+.error-message {
+  color: #dc2626; /* red */
+}
+
+.sent-message {
+  color: #16a34a; /* green */
+}
+
+/* Center status messages */
+.form-group.full.text-center {
+  text-align: center;
+}
+
+.contact-form {
+  width: 100%;
+}
+
+.contact-form h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #1e3a5f;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.contact-button{
+  background-color: #1e3a5f;
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 14px 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+.contact-button:hover{
+  background-color: #1a5dc9;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-col-left,
+  .contact-col-right {
+    max-width: 100%;
+  }
+  .form-group.half {
+    flex-basis: 100%;
+  }
+}
+
+/* Modal styling */
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  animation: modalFadeIn 0.3s ease-out;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #333;
+}
+
+.modal-box h2 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.modal-box p {
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Make sure modal appears above other content */
+.contact {
+  position: relative;
+  z-index: 1;
+}
